@@ -2,19 +2,24 @@
 
 module.exports = function(grunt) {
 
+  require('time-grunt')(grunt);
+
   // Project configuration.
   grunt.initConfig({
+
     // Metadata.
-    pkg: grunt.file.readJSON('break_buster.jquery.json'),
+    pkg: grunt.file.readJSON('jquery-break-buster.json'),
     banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
       '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
       '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
       ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
+
     // Task configuration.
     clean: {
       files: ['dist']
     },
+
     concat: {
       options: {
         banner: '<%= banner %>',
@@ -25,6 +30,7 @@ module.exports = function(grunt) {
         dest: 'dist/<%= pkg.name %>.js'
       },
     },
+
     uglify: {
       options: {
         banner: '<%= banner %>'
@@ -34,9 +40,11 @@ module.exports = function(grunt) {
         dest: 'dist/<%= pkg.name %>.min.js'
       },
     },
+
     qunit: {
       files: ['test/**/*.html']
     },
+
     jshint: {
       gruntfile: {
         options: {
@@ -57,6 +65,7 @@ module.exports = function(grunt) {
         src: ['test/**/*.js']
       },
     },
+
     watch: {
       gruntfile: {
         files: '<%= jshint.gruntfile.src %>',
@@ -71,6 +80,7 @@ module.exports = function(grunt) {
         tasks: ['jshint:test', 'qunit']
       },
     },
+
   });
 
   // These plugins provide necessary tasks.
