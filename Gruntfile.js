@@ -8,7 +8,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
 
     // Metadata.
-    pkg: grunt.file.readJSON('jquery-break-buster.json'),
+    pkg: grunt.file.readJSON('jquery-breakbuster.json'),
     banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
       '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
       '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
@@ -92,6 +92,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'qunit', 'clean', 'concat', 'uglify']);
+  grunt.registerTask('default', [
+    'jshint',
+    // 'qunit',
+    'clean',
+    'concat',
+    'uglify'
+  ]);
 
 };
