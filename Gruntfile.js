@@ -8,7 +8,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
 
     // Metadata.
-    pkg: grunt.file.readJSON('jquery-breakbuster.json'),
+    pkg: grunt.file.readJSON('breakbuster.jquery.json'),
     banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
       '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
       '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +

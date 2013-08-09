@@ -1,5 +1,5 @@
-/*! Breakbuster - v0.1.0 - 2013-08-07
-* https://github.com/shaekuronen/jquery-breakbuster
+/*! Breakbuster - v0.1.1 - 2013-08-09
+* https://github.com/shaekuronen/jquery.breakbuster
 * Copyright (c) 2013 Shae Kuronen; Licensed MIT */
 (function($) {
 
@@ -8,7 +8,7 @@
     // default settings
     var settings = $.extend({
       // defaults to all 3 dash types: regular, en, em but can prevent break on any character
-      characters: ['-','–','—'],
+      characters: ['-','–','—']
     }, options );
 
     return this.each(function() {
