@@ -13,7 +13,7 @@
     // default settings
     var settings = $.extend({
       // defaults to all 3 dash types: regular, en, em but can prevent break on any character
-      characters: ['-','–','—'],
+      characters: ['-','–','—']
     }, options );
 
     return this.each(function() {

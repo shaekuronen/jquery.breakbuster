@@ -1,8 +1,8 @@
 {
   "name": "breakbuster",
   "title": "Breakbuster",
-  "description": "Prevent Linebreaks on Dashes",
-  "version": "0.1.0",
+  "description": "Prevent Linebreaks on Hyphens and Dashes",
+  "version": "0.1.1",
   "homepage": "https://github.com/shaekuronen/jquery.breakbuster",
   "author": {
     "name": "Shae Kuronen",

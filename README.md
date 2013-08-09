@@ -1,6 +1,6 @@
 # Break Buster
 
-Prevent Linebreaks on Dashes
+Prevent Linebreaks on Hyphens and Dashes
 
 ## Getting Started
 Download the [production version][min] or the [development version][max].
@@ -15,7 +15,11 @@ In your web page:
 <script src="dist/breakbuster.min.js"></script>
 <script>
 jQuery(function($) {
-  $.awesome(); // "awesome"
+  // get the elements you want to prevent linebreaks in
+  $('h1, h2, h3, h4, h5, h6, p').breakbuster({
+    // defaults to hyphen, en dash, em dash but can override and prevent break on any character
+    characters: ['-', '–']
+  });
 });
 </script>
 ```
