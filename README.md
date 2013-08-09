@@ -1,4 +1,4 @@
-# Break Buster
+# Breakbuster
 
 Prevent Linebreaks on Hyphens and Dashes
 
