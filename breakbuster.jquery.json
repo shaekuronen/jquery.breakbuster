@@ -29,13 +29,13 @@
     "hyphenated",
     "linebreaks",
     "line-break",
-    "line breaks",
     "typography",
     "punctuation",
-    "white-space: nowrap",
+    "white-space",
+    "nowrap",
     "dash",
-    "non-breaking hyphen",
-    "nonbreaking hyphen",
+    "non-breaking",
+    "nonbreaking",
     "hyphenation"
   ]
 }
