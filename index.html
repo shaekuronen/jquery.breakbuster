@@ -3,79 +3,114 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/main.css">
 
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-    </head>
-    <body>
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 
-        <div class="header-container">
-            <header class="wrapper clearfix">
-                <h1 class="title">h1.title</h1>
-                <nav>
-                    <ul>
-                        <li><a href="#">nav ul li a</a></li>
-                        <li><a href="#">nav ul li a</a></li>
-                        <li><a href="#">nav ul li a</a></li>
-                    </ul>
-                </nav>
-            </header>
-        </div>
+    <!-- google analytics -->
+    <script>
+      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src='//www.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+    <!-- end google analytics -->
 
-        <div class="main-container">
-            <div class="main wrapper clearfix">
+  </head>
+  <body>
 
-                <article>
-                    <header>
-                        <h1>article header h1</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec.</p>
-                    </header>
-                    <section>
-                        <h2>article section h2</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
-                    </section>
-                    <section>
-                        <h2>article section h2</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
-                    </section>
-                    <footer>
-                        <h3>article footer h3</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor.</p>
-                    </footer>
-                </article>
+    <div class="header-container">
+      <header class="wrapper clearfix">
+        <h1 class="title">Breakbuster <span style="display:block;font-size:16px;font-weight:normal;">Prevent Linebreaks on Hyphens and Dashes</span></h1>
+        <nav>
+          <ul>
+            <li><a href="https://github.com/shaekuronen/jquery.breakbuster">GITHUB</a></li>
+            <li><a href="http://plugins.jquery.com/breakbuster/">JQUERY</a></li>
+            <li><a href="#">NPM</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
 
-                <aside>
-                    <h3>aside</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices.</p>
-                </aside>
+    <!-- main container -->
+    <div class="main-container">
 
-            </div> <!-- #main -->
-        </div> <!-- #main-container -->
+      <!-- main -->
+      <div class="main wrapper clearfix">
 
-        <div class="footer-container">
-            <footer class="wrapper">
-                <h3>footer</h3>
-            </footer>
-        </div>
+        <article>
+          <section class="bb-section1">
+            <h2>No Breakbuster or CSS Hyphens</h2>
+            <p>Hyp-hen en–dash em—dash sit am-et, conse—ctetur adip–iscing el-it. Ali—quam sodales urna n-on od–io ege—stas tem–por. Nunc vel vehi-cula ante. Hyp-hen en–dash em—dash ti–am bibe-ndum iaculis libero, eget mole–stie nisl phar—etra in. Hyp-hen en–dash em—dash in sem-per conse-quat est, eu por–ta vel—it mol-lis nec.</p>
+          </section>
+          <section class="bb-section2">
+            <h2>Breakbuster - Default Options</h2>
+            <p>Hyp-hen en–dash em—dash sit am-et, conse—ctetur adip–iscing el-it. Ali—quam sodales urna n-on od–io ege—stas tem–por. Nunc vel vehi-cula ante. Hyp-hen en–dash em—dash ti–am bibe-ndum iaculis libero, eget mole–stie nisl phar—etra in. Hyp-hen en–dash em—dash in sem-per conse-quat est, eu por–ta vel—it mol-lis nec.</p>
+          </section>
+          <section class="bb-section3">
+            <h2>Breakbuster - Only Hyphens</h2>
+            <p>Hyp-hen en–dash em—dash sit am-et, conse—ctetur adip–iscing el-it. Ali—quam sodales urna n-on od–io ege—stas tem–por. Nunc vel vehi-cula ante. Hyp-hen en–dash em—dash ti–am bibe-ndum iaculis libero, eget mole–stie nisl phar—etra in. Hyp-hen en–dash em—dash in sem-per conse-quat est, eu por–ta vel—it mol-lis nec.</p>
+          </section>
+          <section class="bb-section4">
+            <h2>Breakbuster - Only En Dashes</h2>
+            <p>Hyp-hen en–dash em—dash sit am-et, conse—ctetur adip–iscing el-it. Ali—quam sodales urna n-on od–io ege—stas tem–por. Nunc vel vehi-cula ante. Hyp-hen en–dash em—dash ti–am bibe-ndum iaculis libero, eget mole–stie nisl phar—etra in. Hyp-hen en–dash em—dash in sem-per conse-quat est, eu por–ta vel—it mol-lis nec.</p>
+          </section>
+          <section class="bb-section5">
+            <h2>Breakbuster - Only Em Dashes</h2>
+            <p>Hyp-hen en–dash em—dash sit am-et, conse—ctetur adip–iscing el-it. Ali—quam sodales urna n-on od–io ege—stas tem–por. Nunc vel vehi-cula ante. Hyp-hen en–dash em—dash ti–am bibe-ndum iaculis libero, eget mole–stie nisl phar—etra in. Hyp-hen en–dash em—dash in sem-per conse-quat est, eu por–ta vel—it mol-lis nec.</p>
+          </section>
+          <section class="bb-section6">
+            <h2>CSS Hyphens - None</h2>
+            <p>Hyp-hen en–dash em—dash sit am-et, conse—ctetur adip–iscing el-it. Ali—quam sodales urna n-on od–io ege—stas tem–por. Nunc vel vehi-cula ante. Hyp-hen en–dash em—dash ti–am bibe-ndum iaculis libero, eget mole–stie nisl phar—etra in. Hyp-hen en–dash em—dash in sem-per conse-quat est, eu por–ta vel—it mol-lis nec.</p>
+          </section>
+          <section class="bb-section7">
+            <h2>CSS Hyphens - Manual</h2>
+            <p>Hyp-hen en–dash em—dash sit am-et, conse—ctetur adip–iscing el-it. Ali—quam sodales urna n-on od–io ege—stas tem–por. Nunc vel vehi-cula ante. Hyp-hen en–dash em—dash ti–am bibe-ndum iaculis libero, eget mole–stie nisl phar—etra in. Hyp-hen en–dash em—dash in sem-per conse-quat est, eu por–ta vel—it mol-lis nec.</p>
+          </section>
+          <section class="bb-section8">
+            <h2>CSS Hyphens - Auto</h2>
+            <p>Hyp-hen en–dash em—dash sit am-et, conse—ctetur adip–iscing el-it. Ali—quam sodales urna n-on od–io ege—stas tem–por. Nunc vel vehi-cula ante. Hyp-hen en–dash em—dash ti–am bibe-ndum iaculis libero, eget mole–stie nisl phar—etra in. Hyp-hen en–dash em—dash in sem-per conse-quat est, eu por–ta vel—it mol-lis nec.</p>
+          </section>
+        </article>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+      </div>
+      <!-- end main -->
 
-        <script src="js/main.js"></script>
+    </div>
+    <!-- end main container -->
 
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src='//www.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
-    </body>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+
+    <script src="dist/breakbuster.min.js"></script>
+
+    <script>
+      $('.bb-section2 p').breakbuster();
+
+      $('.bb-section3 p').breakbuster({
+        characters: ['-']
+      });
+
+      $('.bb-section4 p').breakbuster({
+        characters: ['–']
+      });
+
+      $('.bb-section5 p').breakbuster({
+        characters: ['—']
+      });
+    </script>
+
+    <script src="js/main.js"></script>
+
+
+
+  </body>
 </html>
