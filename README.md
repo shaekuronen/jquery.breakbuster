@@ -28,7 +28,7 @@ jQuery(function($) {
 _(Coming soon)_
 
 ## Examples
-_(Coming soon)_
+[Demo Page]: http://shaekuronen.github.io/jquery.breakbuster/
 
 ## Release History
 _(Nothing yet)_

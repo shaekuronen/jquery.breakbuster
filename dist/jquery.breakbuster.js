@@ -1,58 +1,150 @@
-/*! Breakbuster - v0.1.1 - 2013-08-10
+/*! Breakbuster - v0.1.2 - 2013-08-10
 * https://github.com/shaekuronen/jquery.breakbuster
 * Copyright (c) 2013 Shae Kuronen; Licensed MIT */
 (function($) {
 
   $.fn.breakbuster = function(options) {
 
+    var settings,
+        tokenize_text,
+        get_words_with_nobreak_characters,
+        wrap_words,
+        update_dom_with_new_text,
+        update_text_with_wrapped_words,
+        remove_duplicate_items;
+
     // default settings
-    var settings = $.extend({
+    settings = $.extend({
       // defaults to all 3 dash types: regular, en, em but can prevent break on any character
       characters: ['-','–','—']
+      // characters: ['-']
     }, options );
 
-    return this.each(function() {
+    tokenize_text = function(text) {
 
-      var this_element = $(this),
-          this_copy = $(this_element).text();
+      // tokenize the text
+      var tokenized_text = [];
+      tokenized_text = text.split(' ');
+      return tokenized_text;
 
-      // if this element has no children elements
-      if (this_element.children().length === 0) {
+    };
 
-        // for each type of character
-        $.each(settings.characters, function(index, character) {
+    remove_duplicate_items = function(array) {
 
-          // if copy contains a character
-          if ( this_copy.indexOf(character) > 0 ) {
+      var result = [];
 
-            // get the hyphenated words
-            var words_with_characters = [];
+      $.each(array, function(index, item) {
 
-            words_with_characters = this_copy.split(' ');
+        if ($.inArray(item, result) === -1) {
+          result.push(item);
+        }
 
-            // for each hyphenated word
-            $.each(words_with_characters, function(index, word) {
+      });
 
-              if (words_with_characters[index].indexOf(character) > 0) {
+      return result;
 
-                // wrap the word in a span with css white-space: nowrap to break linebreak
-                var wrapped_word_with_character = '<span style="white-space:nowrap;">' + word + '</span>';
+    };
 
-                // replace the hyphenated word with one wrapped in span tag
-                this_copy = this_copy.replace(word, wrapped_word_with_character);
+    get_words_with_nobreak_characters = function(tokenized_text) {
 
-              }
+      var words = [],
+          unique_words = [];
 
-            });
+      // for each characters specified in settings.characters
+      $.each(settings.characters, function(index, character) {
 
-            // inject updated copy back into element
-            $(this_element).html(this_copy);
+        // for each word in the text (which has been tokenized)
+        $.each(tokenized_text, function(index, word) {
+
+          // if the word contains a hyphen or dash
+          if (word.indexOf(character) > 0) {
+
+            words.push(word);
 
           }
 
         });
 
-      }
+      });
+
+      // remove any duplicate words
+      unique_words = remove_duplicate_items(words);
+
+      return unique_words;
+
+    };
+
+    wrap_words = function(words) {
+
+      var wrapped_words = [],
+          wrapped_word = '';
+
+      // for each word in words array
+      $.each(words, function(index, word) {
+
+        var object = {};
+
+        // wrap the word in a span with css white-space: nowrap to break linebreak
+        wrapped_word = '<span style="white-space:nowrap;">' + word + '</span>';
+
+        object[word] = wrapped_word;
+
+        // add the word and wrapped word the wrapped words array as a key value object
+        wrapped_words.push(object);
+
+      });
+
+      return wrapped_words;
+
+    };
+
+    update_text_with_wrapped_words = function(text, wrapped_words) {
+
+      // for each of the objects (key value pair) of word and wrapped word
+      $.each(wrapped_words, function(index, object) {
+
+        $.each(object, function(key, value) {
+
+          var regex = new RegExp(key, "g");
+
+          // replace the word with one wrapped in white-space:nowrap span tag
+          text = text.replace(regex, value);
+
+        });
+
+      });
+
+      return text;
+
+    };
+
+    update_dom_with_new_text = function(element, text) {
+
+      // inject updated text back into element
+      $(element).html(text);
+
+    };
+
+    // iterate through the elements specified in breakbuster()
+    return this.each(function() {
+
+      var this_element = $(this),
+          this_text = $(this_element).text(),
+          tokenized_text = [],
+          nobreak_words = [],
+          wrapped_words = [],
+          updated_text = '';
+
+      tokenized_text = tokenize_text(this_text);
+
+      nobreak_words = get_words_with_nobreak_characters(tokenized_text);
+
+      wrapped_words = wrap_words(nobreak_words);
+
+      updated_text = update_text_with_wrapped_words(this_text, wrapped_words);
+
+      update_dom_with_new_text(this_element, updated_text);
+
 
     });
 
