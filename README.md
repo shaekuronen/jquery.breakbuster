@@ -5,14 +5,14 @@ Prevent Linebreaks on Hyphens and Dashes
 ## Getting Started
 Download the [production version][min] or the [development version][max].
 
-[min]: https://raw.github.com/shaekuronen/jquery-break-buster/master/dist/breakbuster.min.js
-[max]: https://raw.github.com/shaekuronen/jquery-break-buster/master/dist/breakbuster.js
+[min]: https://raw.github.com/shaekuronen/jquery-break-buster/master/dist/jquery.breakbuster.min.js
+[max]: https://raw.github.com/shaekuronen/jquery-break-buster/master/dist/jquery.breakbuster.js
 
 In your web page:
 
 ```html
 <script src="jquery.js"></script>
-<script src="dist/breakbuster.min.js"></script>
+<script src="dist/jquery.breakbuster.min.js"></script>
 <script>
 jQuery(function($) {
   // get the elements you want to prevent linebreaks in
