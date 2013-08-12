@@ -1,0 +1,11 @@
+{
+  "name": "breakbuster",
+  "version": "0.1.2",
+  "main": ["./dist/jquery.breakbuster.min.js", "./dist/jquery.breakbuster.js"],
+  "ignore": [
+      "**/.*"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.9.0"
+  }
+}
