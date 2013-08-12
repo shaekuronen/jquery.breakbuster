@@ -23,7 +23,8 @@
   module('jQuery#breakbuster', {
     // This will run before each test in this module.
     setup: function() {
-      this.elems = $('#qunit-fixture').children();
+      // this.elems = $('#qunit-fixture').children();
+      this.elems = $('#qunit-fixture p');
     }
   });
 
@@ -35,7 +36,7 @@
 
   test('is breakbuster', function() {
     expect(1);
-    strictEqual(this.elems.breakbuster().text(), 'breakbuster0breakbuster1breakbuster2', 'should be breakbuster');
+    strictEqual(this.elems.breakbuster().html(), '', 'should be breakbuster');
   });
 
   module('jQuery.breakbuster');

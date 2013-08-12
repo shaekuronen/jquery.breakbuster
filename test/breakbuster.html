@@ -12,8 +12,8 @@
   <script src="../libs/qunit/qunit.js"></script>
 
   <!-- Load local lib and tests. -->
-  <script src="../src/break_buster.js"></script>
-  <script src="break_buster_test.js"></script>
+  <script src="../src/breakbuster.js"></script>
+  <script src="breakbuster_test.js"></script>
 
   <!-- Removing access to jQuery and $. But it'll still be available as _$, if
        you REALLY want to mess around with jQuery in the console. REMEMBER WE
@@ -26,10 +26,16 @@
 
   <div id="qunit"></div>
   <div id="qunit-fixture">
-    <span>lame test markup</span>
-    <span>normal test markup</span>
-    <span>awesome test markup</span>
+    <p>Hyp-hen en–dash em—dash, hyp&#45;hen en&#8211;dash em&#8212;dash. Sem-per conse-quat est, eu por–ta vel—it mol-lis nec.</p>
   </div>
+
+  <script>
+  // _$('#qunit-fixture span').breakbuster();
+  // console.log(_$('#qunit-fixture > span').text());
+  // console.log(_$('#qunit-fixture > span').html());
+  </script>
+
+
 
 </body>
 

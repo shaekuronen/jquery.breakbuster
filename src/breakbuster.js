@@ -41,7 +41,10 @@
       $.each(array, function(index, item) {
 
         if ($.inArray(item, result) === -1) {
+          console.log('the item ' + item + ' is not in array, so add to the array of unique items');
           result.push(item);
+        } else {
+          console.log('the item ' + item + ' is already in array, so do NOT add to array of uniques');
         }
 
       });
@@ -104,6 +107,8 @@
     };
 
     update_text_with_wrapped_words = function(text, wrapped_words) {
+
+      console.log(wrapped_words);
 
       // for each of the objects (key value pair) of word and wrapped word
       $.each(wrapped_words, function(index, object) {
