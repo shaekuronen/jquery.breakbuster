@@ -12,11 +12,13 @@
 
     var settings,
         tokenize_text,
+        is_last_child,
         get_words_with_nobreak_characters,
         wrap_words,
-        update_dom_with_new_text,
-        update_text_with_wrapped_words,
-        remove_duplicate_items;
+        remove_duplicate_items,
+        process_text_nodes,
+        update_dom_with_updated_element,
+        update_text_with_wrapped_words;
 
     // default settings
     settings = $.extend({
@@ -25,11 +27,58 @@
       // characters: ['-']
     }, options );
 
+    is_last_child = function(element) {
+
+      // confirm that the element has no children
+      if ($(element).children().length === 0) {
+
+        return true;
+
+      } else {
+
+        return false;
+
+      }
+
+    };
+
+    process_text_nodes = function(element, wrapped_words) {
+
+      var this_text_node,
+          the_text,
+          updated_text;
+
+      $(element).contents().filter(function() {
+
+        if (this.nodeType === 3) {
+
+          // save the text node
+          this_text_node = this;
+
+          // get the text from this node
+          the_text = $(this_text_node).text();
+
+          // update the text by wrapping nobreak words with white-space: nowrap
+          updated_text = update_text_with_wrapped_words(the_text, wrapped_words);
+
+          // update the text node with the processed text
+          $(this_text_node).replaceWith(updated_text);
+
+        }
+
+      });
+
+      return element;
+
+    };
+
     tokenize_text = function(text) {
 
-      // tokenize the text
       var tokenized_text = [];
+
+      // tokenize the text
       tokenized_text = text.split(' ');
+
       return tokenized_text;
 
     };
@@ -40,11 +89,11 @@
 
       $.each(array, function(index, item) {
 
+        // item is not in array, so add to the array of unique items
         if ($.inArray(item, result) === -1) {
-          console.log('the item ' + item + ' is not in array, so add to the array of unique items');
+
           result.push(item);
-        } else {
-          console.log('the item ' + item + ' is already in array, so do NOT add to array of uniques');
+
         }
 
       });
@@ -108,8 +157,6 @@
 
     update_text_with_wrapped_words = function(text, wrapped_words) {
 
-      console.log(wrapped_words);
-
       // for each of the objects (key value pair) of word and wrapped word
       $.each(wrapped_words, function(index, object) {
 
@@ -128,10 +175,10 @@
 
     };
 
-    update_dom_with_new_text = function(element, text) {
+    update_dom_with_updated_element = function(element, updated_element) {
 
       // inject updated text back into element
-      $(element).html(text);
+      $(element).replaceWith(updated_element);
 
     };
 
@@ -143,7 +190,7 @@
           tokenized_text = [],
           nobreak_words = [],
           wrapped_words = [],
-          updated_text = '';
+          updated_element;
 
       tokenized_text = tokenize_text(this_text);
 
@@ -151,10 +198,9 @@
 
       wrapped_words = wrap_words(nobreak_words);
 
-      updated_text = update_text_with_wrapped_words(this_text, wrapped_words);
+      updated_element = process_text_nodes(this_element, wrapped_words);
 
-      update_dom_with_new_text(this_element, updated_text);
-
+      update_dom_with_updated_element(this_element, updated_element);
 
     });
 
