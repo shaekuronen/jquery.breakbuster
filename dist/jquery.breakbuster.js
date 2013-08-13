@@ -1,4 +1,4 @@
-/*! Breakbuster - v0.1.2 - 2013-08-13
+/*! Breakbuster - v0.1.3 - 2013-08-13
 * https://github.com/shaekuronen/jquery.breakbuster
 * Copyright (c) 2013 Shae Kuronen; Licensed MIT */
 (function($) {
