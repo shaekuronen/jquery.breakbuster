@@ -2,6 +2,8 @@
 
 Prevent Linebreaks on Hyphens and Dashes
 
+See demo at [http://shaekuronen.github.io/jquery.breakbuster/]: http://shaekuronen.github.io/jquery.breakbuster/
+
 ## Getting Started
 Download the [production version][min] or the [development version][max].
 
